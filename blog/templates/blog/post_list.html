@@ -7,9 +7,11 @@
 			<title>Max Blog</title>
 		</div>
 		<div>
-			<p>published</p>
-			<h2><a href="">Titulo da postagem</a></h2>
-			<p>Conteudo</p>
+			{% for post in posts %}
+				<p>publicado: {{post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			{% endfor %}
 		</div>
 	</body>
 </html>
